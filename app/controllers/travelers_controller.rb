@@ -11,6 +11,7 @@ class TravelersController < ApplicationController
   def create
     @traveler = Traveler.new(params[:traveler])
 	if @traveler.save
+	  sign_in @traveler
 	  flash[:success] = "Welcome to the Traveler's family!"
 	  redirect_to @traveler
 	else
