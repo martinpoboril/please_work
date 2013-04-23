@@ -1,5 +1,5 @@
 PleaseWork::Application.routes.draw do
-  get "travelers/new"
+  resources :travelers
 
   root to: 'static_pages#home'
   
