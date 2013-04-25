@@ -1,0 +1,12 @@
+<a href="<%= traveler_path(current_traveler) %>">
+  <%= gravatar_for current_traveler, size: 52 %>
+</a>
+<h1>
+  <%= current_traveler.last_name %>
+</h1>
+<span>
+  <%= link_to "view my profile", current_traveler %>
+</span>
+<span>
+  <%= pluralize(current_traveler.comments.count, "comment") %>
+</span>

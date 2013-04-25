@@ -1,6 +1,7 @@
 PleaseWork::Application.routes.draw do
   resources :travelers
   resources :sessions, only: [:new, :create, :destroy]
+  resources :comments, only: [:create, :destroy]
 
   root to: 'static_pages#home'
   

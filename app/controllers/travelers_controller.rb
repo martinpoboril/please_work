@@ -5,6 +5,7 @@ class TravelersController < ApplicationController
 
   def show
     @traveler = Traveler.find(params[:id])
+	@comments = @traveler.comments.paginate(page: params[:page])
   end
   
   def destroy

@@ -1,0 +1,15 @@
+<li id="<%= feed_item.id %>">
+  <%= link_to gravatar_for(feed_item.traveler), feed_item.traveler %>
+  <span class="traveler">
+    <%= link_to feed_item.traveler.last_name, feed_item.traveler %>
+  </span>
+  <span class="feelings"><%= feed_item.feelings %></span>
+  <span class="timestamp">
+    Posted <%= time_ago_in_words(feed_item.created_at) %> ago.
+  </span>
+  <% if current_traveler?(feed_item.traveler) %>
+    <%= link_to "delete", feed_item, method: :delete,
+                                     data: { confirm: "You sure?" },
+                                     title: feed_item.feelings %>
+  <% end %>
+</li>

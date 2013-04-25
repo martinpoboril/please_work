@@ -8,4 +8,13 @@
       </h1>
     </section>
   </aside>
+ <div class="span8">
+    <% if @traveler.comments.any? %>
+      <h3>Comments (<%= @traveler.comments.count %>)</h3>
+      <ol class="comments">
+        <%= render @comments %>
+      </ol>
+      <%= will_paginate @comments %>
+    <% end %>
+  </div>
 </div>

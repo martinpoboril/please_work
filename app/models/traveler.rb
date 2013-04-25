@@ -1,6 +1,7 @@
 class Traveler < ActiveRecord::Base
   attr_accessible :email, :first_name, :last_name, :password, :password_confirmation
   has_secure_password
+  has_many :comments, dependent: :destroy, :foreign_key => "user_id"
   
   before_save { |traveler| traveler.email = email.downcase }
   before_save :create_remember_token

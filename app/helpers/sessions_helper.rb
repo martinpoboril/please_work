@@ -21,6 +21,13 @@ module SessionsHelper
     traveler == current_traveler
   end
   
+  def signed_in_traveler
+    unless signed_in?
+      store_location
+      redirect_to signin_url, notice: "Please sign in."
+    end
+  end
+  
   def redirect_back_or(default)
     redirect_to(session[:return_to] || default)
     session.delete(:return_to)
