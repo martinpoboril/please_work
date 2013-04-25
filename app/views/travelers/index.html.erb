@@ -1,0 +1,10 @@
+<% provide(:title, 'All travelers') %>
+<h1>All travelers</h1>
+
+<%= will_paginate %>
+
+<ul class="travelers">
+  <%= render @travelers %>
+</ul>
+
+<%= will_paginate %>

@@ -1,0 +1,8 @@
+<li>
+  <%= gravatar_for traveler, size: 52 %>
+  <%= link_to traveler.last_name, traveler %>
+  <% if current_traveler.admin? && !current_traveler?(traveler) %>
+    | <%= link_to "delete", traveler, method: :delete,
+                                  data: { confirm: "You sure?" } %>
+  <% end %>
+</li>
